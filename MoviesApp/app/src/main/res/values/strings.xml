@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">MoviesApp</string>
+    <string name="movie_category">Category</string>
+    <string name="movie_classification">Classification</string>
+    <string name="movie_rating">Rating</string>
+    <string name="movie_year">Year</string>
+
+</resources>
