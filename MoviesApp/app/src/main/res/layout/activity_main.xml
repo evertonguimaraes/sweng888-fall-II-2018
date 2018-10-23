@@ -5,23 +5,44 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/constraint_layout"
     tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/image_view_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/main_image_view_msg"
+        app:layout_constraintBottom_toTopOf="@+id/movie_category"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:srcCompat="@drawable/ic_app_logo"
+        />
 
     <TextView
         android:id="@+id/movie_category"
         style="@style/category_style"
+        android:layout_height="65dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:background="@color/movie_category"
         android:text="@string/movie_category"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/image_view_profile" />
 
     <TextView
         android:id="@+id/movie_classification"
         style="@style/category_style"
+        android:layout_height="65dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:background="@color/movie_classification"
@@ -32,27 +53,45 @@
         app:layout_constraintTop_toBottomOf="@+id/movie_rating" />
 
     <TextView
-        android:id="@+id/movie_year"
+        android:id="@+id/movie_releases"
         style="@style/category_style"
+        android:layout_height="65dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:background="@color/movie_rating"
-        android:text="@string/movie_year"
+        android:text="@string/movie_releases"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/movie_category" />
 
     <TextView
         android:id="@+id/movie_rating"
         style="@style/category_style"
+        android:layout_height="65dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:background="@color/movie_year"
         android:text="@string/movie_rating"
+        android:onClick="clickRating"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/movie_year" />
+        app:layout_constraintTop_toBottomOf="@+id/movie_releases"
+        tools:ignore="OnClick" />
+
+    <Button
+        android:id="@+id/button_contact"
+        android:layout_width="0dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/button_contact"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.272"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/movie_classification"
+        tools:text="@string/button_contact" />
 
 </android.support.constraint.ConstraintLayout>
