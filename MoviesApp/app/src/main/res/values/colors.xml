@@ -16,4 +16,6 @@
     <color name="movie_rating">#03DAC6</color>
     <color name="movie_year">#BB86FC</color>
 
+    <color name="pink_text">#e91e63</color>
+
 </resources>

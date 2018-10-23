@@ -1,8 +1,21 @@
 <resources>
-    <string name="app_name">MoviesApp</string>
+
+    <string name="app_name">Movies App</string>
+    <string name="category_activity"> Category </string>
     <string name="movie_category">Category</string>
     <string name="movie_classification">Classification</string>
     <string name="movie_rating">Rating</string>
-    <string name="movie_year">Year</string>
+    <string name="movie_releases">New Releases</string>
 
+    <string name="button_contact">Contact Support</string>
+
+    <!-- welcome messages -->
+    <string name="act_welcome_msg_category"> Welcome to MoviesApp - Categories</string>
+    <string name="act_welcome_msg_classification"> Welcome to MoviesApp - Classification</string>
+    <string name="act_welcome_msg_rating"> Welcome to MoviesApp - Rating</string>
+    <string name="act_welcome_msg_release"> Welcome to MoviesApp - New Releases</string>
+
+    <string name="main_image_view_msg">Get some popcorn, and have fun. </string>
+
+    <string name="class_text_view_click"> Yaaay! it worked. </string>
 </resources>
