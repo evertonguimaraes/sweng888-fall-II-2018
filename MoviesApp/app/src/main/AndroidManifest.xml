@@ -14,6 +14,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.SEND" />
+                <action android:name="android.intent.action.CALL" />
             </intent-filter>
         </activity>
         <activity
@@ -23,6 +24,10 @@
         <activity android:name=".NewReleaseActivity" />
         <activity android:name=".RatingActivity" />
         <activity android:name=".ClassificationActivity"></activity>
+
+
     </application>
+
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
 
 </manifest>
