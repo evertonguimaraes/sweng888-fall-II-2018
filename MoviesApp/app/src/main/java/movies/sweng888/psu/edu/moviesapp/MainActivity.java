@@ -103,26 +103,16 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // Set onClickListener to the Contact Button
+
         mButtonContact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Create an Implicit Intent to call the email app.
-                // In this case, we are using the Intent-filter "ACTION_SEND" for allowing this feature
                 Intent intent = new Intent(Intent.ACTION_SEND);
-
-                // Set up the text type to be sent
                 intent.setType("text/html");
-
-                // Add extra information for the intent
                 intent.putExtra(Intent.EXTRA_EMAIL, "evertonguimaraes@gmail.com");
                 intent.putExtra(Intent.EXTRA_CC, "ezt157@psu.edu");
                 intent.putExtra(Intent.EXTRA_SUBJECT, "New Movies - Release");
                 intent.putExtra(Intent.EXTRA_TEXT, "Please, notify me when new movies are available.");
-
-                // Option One - there's no preselection for opening third-party apps OR
-                //startActivity(intent);
-
-                // Opction Two
                 startActivity(Intent.createChooser(intent, "Send email to movie theater"));
             }
         });

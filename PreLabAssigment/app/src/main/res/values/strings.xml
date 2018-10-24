@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">PreLabAssignment</string>
+    <string name="txt_view_name">Type your name</string>
+    <string name="txt_view_phone">Type your phone</string>
+    <string name="btn_confirm">Confirm.</string>
+    <string name="btn_cancel">Cancel</string>
+
+    <!-- These are the strings for the second activity -->
+    <string name="text_view_msg"> Welcome </string>
+    <string name="btn_call"> Call Contact </string>
+
+</resources>
