@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">AmpYourApp</string>
+    <string name="edit_text_user">Email or ID</string>
+    <string name="edit_text_pass">Password</string>
+    <string name="btn_login">Login</string>
+    <string name="text_view_or">OR</string>
+    <string name="btn_create_user">Sign Up</string>
+</resources>
