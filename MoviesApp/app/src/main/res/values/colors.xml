@@ -18,4 +18,10 @@
 
     <color name="pink_text">#e91e63</color>
 
+    <!-- colors for category activity layout -->
+    <color name="light_blue">#0288d1</color>
+    <color name="deep_orange">#d84315</color>
+    <color name="light_yellow">#ffff8d</color>
+    <color name="light_green"> #aed581 </color>
+
 </resources>
