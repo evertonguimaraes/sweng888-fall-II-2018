@@ -5,10 +5,16 @@ public class Movie {
     private String title;
     private String category;
     private String rating;
-    private int year;
+    private String year;
 
-    public Movie(String title, int year){
+    public Movie(String title, String year){
         this.title = title;
+        this.year = year;
+    }
+
+    public Movie(String title, String category, String year) {
+        this.title = title;
+        this.category = category;
         this.year = year;
     }
 
@@ -36,16 +42,16 @@ public class Movie {
         this.rating = rating;
     }
 
-    public int getYear() {
+    public String getYear() {
         return year;
     }
 
-    public void setYear(int year) {
+    public void setYear(String year) {
         this.year = year;
     }
 
     @Override
     public String toString() {
-        return this.title+" "+String.valueOf(this.year);
+        return this.title;
     }
 }
