@@ -46,7 +46,13 @@ public class CategoryActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 // Here goes the code.
+                Movie movie = (Movie) listViewMoviesCategory.getItemAtPosition(position);
+                Intent intent = new Intent(CategoryActivity.this, MovieDetailsActivity.class);
+                intent.putExtra("TITLE", movie.getTitle());
+                intent.putExtra("CATEGORY", movie.getCategory());
+                intent.putExtra("YEAR", movie.getYear());
 
+                startActivity(intent);
             }
         });
 
