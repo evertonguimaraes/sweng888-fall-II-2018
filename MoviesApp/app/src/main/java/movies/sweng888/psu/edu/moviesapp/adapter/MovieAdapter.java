@@ -6,13 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.List;
 
 import movies.sweng888.psu.edu.moviesapp.R;
-import movies.sweng888.psu.edu.moviesapp.model.Movie;
+import movies.sweng888.psu.edu.moviesapp.model.entity.entity.Movie;
 
 public class MovieAdapter extends ArrayAdapter {
 

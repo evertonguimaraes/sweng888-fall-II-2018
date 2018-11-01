@@ -15,7 +15,15 @@
     <string name="act_welcome_msg_rating"> Welcome to MoviesApp - Rating</string>
     <string name="act_welcome_msg_release"> Welcome to MoviesApp - New Releases</string>
 
-    <string name="main_image_view_msg">Get some popcorn, and have fun. </string>
-
     <string name="class_text_view_click"> Yaaay! it worked. </string>
+    <string name="image_view_description">Movie and Popcorn</string>
+    <string name="label_details_movie"> Movie Details </string>
+
+    <!-- Strings for the Login Activity -->
+    <string name="act_login_msg">Login / SignUp</string>
+    <string name="edit_text_user">Email or ID</string>
+    <string name="edit_text_pass">Password</string>
+    <string name="btn_login">Login</string>
+    <string name="text_view_or">OR</string>
+    <string name="btn_create_user">Sign Up</string>
 </resources>
