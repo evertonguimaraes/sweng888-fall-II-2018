@@ -1,4 +1,4 @@
-package movies.sweng888.psu.edu.moviesapp;
+package movies.sweng888.psu.edu.moviesapp.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,18 +9,17 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
 import movies.sweng888.psu.edu.moviesapp.R;
 import movies.sweng888.psu.edu.moviesapp.adapter.MovieAdapter;
-import movies.sweng888.psu.edu.moviesapp.model.Movie;
+import movies.sweng888.psu.edu.moviesapp.model.entity.dao.PersistenceMovie;
+import movies.sweng888.psu.edu.moviesapp.model.entity.entity.Movie;
 
 public class CategoryActivity extends AppCompatActivity {
 
     private ListView listViewMoviesCategory;
-    private ArrayAdapter<Movie> arrayAdapter;
     private MovieAdapter movieAdapter;
     private ArrayList<Movie> movies;
 
@@ -32,7 +31,10 @@ public class CategoryActivity extends AppCompatActivity {
         Log.d("CategoryActivity", "onCreate");
 
         listViewMoviesCategory = (ListView) findViewById(R.id.list_view_movie_category);
-        movies = loadMovies();
+        //movies = loadMovies();
+
+        PersistenceMovie persistenceMovie = new PersistenceMovie(this);
+        movies = persistenceMovie.getDataFromDB();
 
         movieAdapter = new MovieAdapter(this,
                 R.layout.custom_list_item,
@@ -40,12 +42,10 @@ public class CategoryActivity extends AppCompatActivity {
 
         listViewMoviesCategory.setAdapter(movieAdapter);
 
-        // Set a listener
         listViewMoviesCategory.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                // Here goes the code.
                 Movie movie = (Movie) listViewMoviesCategory.getItemAtPosition(position);
                 Intent intent = new Intent(CategoryActivity.this, MovieDetailsActivity.class);
                 intent.putExtra("TITLE", movie.getTitle());
@@ -73,6 +73,4 @@ public class CategoryActivity extends AppCompatActivity {
 
         return  movies;
     }
-
-
 }

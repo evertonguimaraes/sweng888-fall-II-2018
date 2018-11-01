@@ -1,4 +1,4 @@
-package movies.sweng888.psu.edu.moviesapp;
+package movies.sweng888.psu.edu.moviesapp.activity;
 
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;

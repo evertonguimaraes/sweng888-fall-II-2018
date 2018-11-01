@@ -1,4 +1,4 @@
-package movies.sweng888.psu.edu.moviesapp;
+package movies.sweng888.psu.edu.moviesapp.activity;
 
 import android.content.Intent;
 import android.support.constraint.ConstraintLayout;

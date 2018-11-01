@@ -1,6 +1,5 @@
-package movies.sweng888.psu.edu.moviesapp;
+package movies.sweng888.psu.edu.moviesapp.activity;
 
-import android.Manifest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -15,7 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.w3c.dom.Text;
+import movies.sweng888.psu.edu.moviesapp.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -97,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                 //Snackbar.make(mConstraintLayout, "MainActivity.onTouchListener()", Snackbar.LENGTH_LONG);
 
                 // Option 2: Make it more flexible.
-                Snackbar.make(mConstraintLayout, R.string.main_image_view_msg, Snackbar.LENGTH_LONG).show();
+                Snackbar.make(mConstraintLayout, R.string.act_login_msg, Snackbar.LENGTH_LONG).show();
                 return true;
             }
         });

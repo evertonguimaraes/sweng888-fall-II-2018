@@ -11,20 +11,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight">
-        <activity android:name=".MainActivity">
+        <activity android:name=".activity.MainActivity"></activity>
+        <activity
+            android:name=".activity.CategoryActivity"
+            android:label="@string/category_activity">
+        </activity>
+        <activity android:name=".activity.NewReleaseActivity" />
+        <activity android:name=".activity.RatingActivity" />
+        <activity android:name=".activity.ClassificationActivity" />
+        <activity
+            android:name=".activity.MovieDetailsActivity"
+            android:label="@string/label_details_movie" />
+        <activity android:name=".activity.LoginActivity" android:label="@string/act_login_msg">
             <intent-filter>
                 <category android:name="android.intent.category.LAUNCHER" />
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".CategoryActivity"
-            android:label="@string/category_activity">
-        </activity>
-        <activity android:name=".NewReleaseActivity" />
-        <activity android:name=".RatingActivity" />
-        <activity android:name=".ClassificationActivity" />
-        <activity android:name=".MovieDetailsActivity"></activity>
     </application>
 
 </manifest>

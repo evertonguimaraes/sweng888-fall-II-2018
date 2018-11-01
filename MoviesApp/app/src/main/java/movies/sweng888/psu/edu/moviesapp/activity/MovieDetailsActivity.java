@@ -1,9 +1,11 @@
-package movies.sweng888.psu.edu.moviesapp;
+package movies.sweng888.psu.edu.moviesapp.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
+
+import movies.sweng888.psu.edu.moviesapp.R;
 
 public class MovieDetailsActivity extends AppCompatActivity {
 

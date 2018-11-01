@@ -8,6 +8,10 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme.RoundedCorderMaterialButton" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:background"> </item>
+    </style>
+
     <style name="category_style">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/list_item_height</item>
