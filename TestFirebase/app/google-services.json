@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "950650222698",
+    "firebase_url": "https://testfirebase-c732e.firebaseio.com",
+    "project_id": "testfirebase-c732e",
+    "storage_bucket": "testfirebase-c732e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:950650222698:android:16ce7949e7ec8950",
+        "android_client_info": {
+          "package_name": "mc.sweng888.psu.edu.testfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "950650222698-fm5pmoscc7aqbo1ukptcre3trd2a47qs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA5tUI40QLDL5_oqUDPE2BFYPmMtvipp5s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
