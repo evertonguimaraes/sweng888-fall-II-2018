@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">TestFirebase</string>
+    <string name="btn_sign_in">Sign In</string>
+    <string name="btn_sign_up">Sign Up</string>
+    <string name="btn_sign_in_google">Google Sign In</string>
+
+    <string name="act_login_msg">Login / SignUp</string>
+    <string name="edit_text_user">Email or ID</string>
+    <string name="edit_text_pass">Password</string>
+    <string name="btn_login">Login</string>
+    <string name="text_view_or">OR</string>
+    <string name="btn_create_user">Sign Up</string>
+
+</resources>

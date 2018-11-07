@@ -17,7 +17,7 @@
 
     <string name="class_text_view_click"> Yaaay! it worked. </string>
     <string name="image_view_description">Movie and Popcorn</string>
-    <string name="label_details_movie"> Movie Details </string>
+
 
     <!-- Strings for the Login Activity -->
     <string name="act_login_msg">Login / SignUp</string>
@@ -26,4 +26,25 @@
     <string name="btn_login">Login</string>
     <string name="text_view_or">OR</string>
     <string name="btn_create_user">Sign Up</string>
+    
+    <!-- Strings for error message -->
+    <string name="msg_user_not_found">User Not Found. Please sign up</string>
+    <string name="msg_pass_wrong">Please, try again. Wrong password</string>
+
+    <!-- Strings for activity labels -->
+    <string name="activity_label_details_movie"> Movie Details </string>
+    <string name="activity_label_success_login"> User Profile </string>
+
+    <string name="user_first"> First </string>
+    <string name="user_last"> Last </string>
+    <string name="user_id"> Username </string>
+    <string name="user_birthday"> Birth </string>
+    <string name="user_phone"> Phone </string>
+    <string name="user_email"> Email </string>
+    <string name="user_pass"> Password </string>
+    <string name="btn_new_user"> Create New User </string>
+
+    <string name="suc_info"> User Info</string>
+    <string name="suc_user"> username</string>
+    <string name="suc_pass"> pass </string>
 </resources>
