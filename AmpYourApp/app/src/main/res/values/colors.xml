@@ -7,4 +7,7 @@
     <color name="textBackground">#0277bd</color>
     <color name="whiteBackground">#fafafa</color>
     <color name="oliveButton">#00897b</color>
+
+    <!-- colors for the login activity -->
+
 </resources>

@@ -46,18 +46,17 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         // The constraint layout will be used for displaying the Snackbar.
         mConstraintLayoutLogin = (ConstraintLayout) findViewById(R.id.constraint_layout_login);
 
-        //
-        persistenceUserProfile = new PersistenceUserProfile(this);
-
-        insertData();
-
         // TODO replace by a simple query to verify if the user exists in the database.
         // TODO customize query to check this info on the UserProfileTable
-        userProfiles = persistenceUserProfile.getDataFromDB();
-
         mButtonLogin.setOnClickListener(this);
         mButtonSignUp.setOnClickListener(this);
+    }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        persistenceUserProfile = new PersistenceUserProfile(this);
+        userProfiles = persistenceUserProfile.getDataFromDB();
     }
 
     @Override
@@ -104,17 +103,4 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
         startActivity(intent);
     }
-
-    private void insertData(){
-
-        persistenceUserProfile.insert(new UserProfile("Luke", "Cage",
-                "lc00", "222-555-444", "lc00@psu.edu",
-                "1234", new Date(20181010)));
-
-        persistenceUserProfile.insert(new UserProfile("Everton", "Guimaraes",
-                "jim09", "222-333-444", "jim09@psu.edu",
-                "1234", new Date(20181010)));
-
-    }
-
 }

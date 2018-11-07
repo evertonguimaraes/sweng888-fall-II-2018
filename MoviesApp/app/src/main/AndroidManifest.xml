@@ -40,7 +40,9 @@
         <activity android:name=".activity.LoginSuccessActivity"
             android:label="@string/activity_label_success_login" />
 
-        <activity android:name=".activity.SignUpActivity"></activity>
+        <activity android:name=".activity.SignUpActivity" android:label="User Sign Up">
+
+        </activity>
     </application>
 
 </manifest>

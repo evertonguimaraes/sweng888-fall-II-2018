@@ -2,9 +2,10 @@ package movies.sweng888.psu.edu.moviesapp.model.entity.entity;
 
 import android.support.annotation.Nullable;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class UserProfile {
+public class UserProfile implements Serializable {
 
     private String name;
     private String surname;
@@ -12,12 +13,12 @@ public class UserProfile {
     private String phone; // allows null
     private String email;
     private String password;
-    private Date birthday; // allows null
+    private String birthday; // allows null
 
     public UserProfile() {
     }
 
-    public UserProfile(String name, String surname, String username, @Nullable String phone, String email, String password, @Nullable Date birthday ) {
+    public UserProfile(String name, String surname, String username, @Nullable String phone, String email, String password, @Nullable String birthday ) {
             this.name = name;
         this.surname = surname;
         this.username = username;
@@ -64,11 +65,11 @@ public class UserProfile {
         this.username = username;
     }
 
-    public Date getBirthday() {
+    public String getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Date birthday) {
+    public void setBirthday(String birthday) {
         this.birthday = birthday;
     }
 

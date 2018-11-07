@@ -14,7 +14,7 @@ import movies.sweng888.psu.edu.moviesapp.model.entity.entity.UserProfile;
  */
 public class DatabaseAccess extends SQLiteOpenHelper {
 
-    public static final int DATABASE_VERSION = 1;
+    public static final int DATABASE_VERSION = 2;
     public static final String DATABASE_NAME = "movies_user.db";
 
 
