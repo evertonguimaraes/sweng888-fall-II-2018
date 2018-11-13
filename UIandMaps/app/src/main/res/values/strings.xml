@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">UIandMaps</string>
+
+    <!-- strings for the main_activity -->
+    <string name="main_edit_text_pass">Password</string>
+    <string name="main_edit_text_user">Email or ID</string>
+    <string name="main_text_view_or">OR</string>
+    <string name="main_btn_login">Login</string>
+    <string name="main_btn_create_user">Sign Up</string>
+    <string name="main_image_view">Bubbles in the glass</string>
+
+    <string name="fb_sign_in_success">signInWithEmailAndPassword: success</string>
+    <string name="fb_sign_in_failed">signInWithEmailAndPassword: failed</string>
+
+    <string name="fb_create_success">createUserWithEmailAndPassword: success</string>
+    <string name="fb_create_failed">createUserWithEmailAndPassword: failed</string>
+
+</resources>
