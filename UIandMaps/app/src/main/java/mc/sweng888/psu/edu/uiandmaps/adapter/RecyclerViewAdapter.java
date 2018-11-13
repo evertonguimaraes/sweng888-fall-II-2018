@@ -2,7 +2,6 @@ package mc.sweng888.psu.edu.uiandmaps.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
-import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -37,9 +36,10 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         // Elements defined in the UI
-
         CardView parentLayout;
 
+        // For now, we don't need the imageView.
+        // The images will be customized later on.
         ImageView imageView;
 
         TextView textViewLatitude;
