@@ -53,6 +53,12 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             textViewLatitude = itemView.findViewById(R.id.txt_view_latitute);
             textViewLongitude = itemView.findViewById(R.id.txt_view_longitute);
             textViewLocation =  itemView.findViewById(R.id.text_view_location);
+
+            // TODO Replace the ic_android_icon by another image.
+
+            // Option 1: create a data storage on firebase
+            // Option 2: create new drawables and refer to the resources for each ImageView item.
+            // Option 3: create a arraylist with all references to the images to be used in the ListView.
         }
     }
 

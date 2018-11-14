@@ -55,8 +55,8 @@ public class LoggedActivity extends AppCompatActivity {
 
     private void getFirebaseData(){
 
-//        locationDataList = new ArrayList<>();
-        locationDataList = loadDataset();
+        locationDataList = new ArrayList<>();
+        //locationDataList = loadDataset();
         firebaseDatabase = FirebaseDatabase.getInstance();
 
         databaseReference = firebaseDatabase.getReference();
@@ -64,6 +64,7 @@ public class LoggedActivity extends AppCompatActivity {
         databaseReference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
                 LocationData location = dataSnapshot.getValue(LocationData.class);
                 Log.d("TAG", location.getLatitude().toString());
                 Log.d("TAG", location.getLongitude().toString());

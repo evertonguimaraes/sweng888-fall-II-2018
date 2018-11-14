@@ -17,6 +17,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import mc.sweng888.psu.edu.uiandmaps.R;
+import mc.sweng888.psu.edu.uiandmaps.model.LocationData;
 import mc.sweng888.psu.edu.uiandmaps.utils.Utils;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -77,6 +78,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
                         // User successfully authenticated
+                        // It creates an async task, and gather the user info.
                         if (task.isSuccessful()){
                             Log.d(TAG_AUTH, getString(R.string.fb_sign_in_success));
                             FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
