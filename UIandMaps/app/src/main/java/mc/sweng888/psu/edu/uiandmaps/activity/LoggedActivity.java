@@ -1,6 +1,7 @@
 package mc.sweng888.psu.edu.uiandmaps.activity;
 
 import android.content.Intent;
+import android.provider.ContactsContract;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -29,10 +30,12 @@ public class LoggedActivity extends AppCompatActivity {
     private static final String TAG_PARAMS = "PARAMS";
     private static final String TAG_RECYCLER = "RECYCLER_VIEW";
 
-    // Firebase
-    private FirebaseDatabase firebaseDatabase = null;
-    private DatabaseReference databaseReference = null;
-    ArrayList<LocationData> locationDataList = null;
+    // Creating RecyclerView and Adapter as atributte for the class.
+    private RecyclerView recyclerView = null;
+    private RecyclerViewAdapter recyclerViewAdapter = null;
+
+    // DataSet
+    private ArrayList<LocationData> locationDataList = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,35 +44,47 @@ public class LoggedActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         // Recovers the current user logged into the firebase.
+        // We are not using the user info for now.
         FirebaseUser firebaseUser = intent.getParcelableExtra("CURRENT_USER");
         Log.i(TAG_PARAMS, firebaseUser.getEmail());
 
-        // BEFORE: predefined set of locations
+        // Gathering the data
+        // BEFORE: Using an ArrayList with MOCK Objects.
+        //locationDataList = loadDataset();
+
+        // AFTER: Using firebase.
         getFirebaseData();
+
         buildRecyclerView();
 
     }
 
-    // AFTER: Get data from firebase.
-    // See implementation on method (getFirebaseData)
-
+    // Updating the RecyclerView based on the Firebase data.
+    // Step 1: make RecyclerViewAdapter and RecyclerView as global variables.
+    // Step 2: call the RecyclerViewAdapter.notifyDataSetChanged
     private void getFirebaseData(){
 
         locationDataList = new ArrayList<>();
-        //locationDataList = loadDataset();
-        firebaseDatabase = FirebaseDatabase.getInstance();
 
-        databaseReference = firebaseDatabase.getReference();
+        FirebaseDatabase firebaseDatabase = FirebaseDatabase.getInstance();
+
+        DatabaseReference databaseReference = firebaseDatabase.getReference();
 
         databaseReference.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
 
-                LocationData location = dataSnapshot.getValue(LocationData.class);
-                Log.d("TAG", location.getLatitude().toString());
-                Log.d("TAG", location.getLongitude().toString());
-                Log.d("TAG", location.getLocation());
-                locationDataList.add(location);
+                LocationData currentLocation = dataSnapshot.getValue(LocationData.class);
+                Log.d("TAG", currentLocation.getLatitude().toString());
+                Log.d("TAG", currentLocation.getLongitude().toString());
+                Log.d("TAG", currentLocation.getLocation());
+
+                // Adding a new element from the
+                locationDataList.add(currentLocation);
+
+                // Once the task runs assynchronously, we need to notify the adapter of
+                // any changes in the dataset, so it will automatically update the UI.
+                recyclerViewAdapter.notifyDataSetChanged();
             }
 
             @Override
@@ -95,16 +110,21 @@ public class LoggedActivity extends AppCompatActivity {
 
     }
 
+    // Building the RecyclerView and RecyclerViewAdapter based on the dataset.
     private void buildRecyclerView(){
         Log.i(TAG_RECYCLER, "buildRecyclerView:called" );
-        RecyclerView recyclerView = findViewById(R.id.recyclerView);
-        RecyclerViewAdapter recyclerViewAdapter = new RecyclerViewAdapter(this, locationDataList);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.addItemDecoration(new DividerItemDecoration(getApplicationContext(), LinearLayoutManager.VERTICAL));
-        recyclerView.setAdapter(recyclerViewAdapter);
+        this.recyclerView = findViewById(R.id.recyclerView);
+        this.recyclerViewAdapter = new RecyclerViewAdapter(this, locationDataList);
+        this.recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        this.recyclerView.setItemAnimator(new DefaultItemAnimator());
+        this.recyclerView.addItemDecoration(new DividerItemDecoration(getApplicationContext(), LinearLayoutManager.VERTICAL));
+        this.recyclerView.setAdapter(recyclerViewAdapter);
+
+        // TODO Adding support to events.
+
     }
 
+    // Creating Mock objects for testing purposes.
     private ArrayList<LocationData> loadDataset(){
 
         ArrayList<LocationData> locationDataList = new ArrayList<>();
