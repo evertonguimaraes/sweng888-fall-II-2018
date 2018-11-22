@@ -1,6 +1,8 @@
 package mc.sweng888.psu.edu.newmapsexample.activity;
 
 import android.app.Activity;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -17,25 +19,50 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.ArrayList;
 
 import mc.sweng888.psu.edu.newmapsexample.R;
+import mc.sweng888.psu.edu.newmapsexample.broadcast.BroadcastReceiverMap;
 import mc.sweng888.psu.edu.newmapsexample.model.MapLocation;
 
-public class MainActivity extends Activity implements OnMapReadyCallback {
+public class MapActivity extends Activity implements OnMapReadyCallback {
 
     private final String LOG_MAP = "GOOGLE_MAPS";
 
+    // Google Maps
     private LatLng currentLatLng;
-
     private MapFragment mapFragment;
-
     private Marker currentMapMarker;
+
+    // Broadcast Receiver
+    private IntentFilter intentFilter = null;
+    private BroadcastReceiverMap broadcastReceiverMap = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.maps_activity);
 
         mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.google_map);
         mapFragment.getMapAsync(this);
+
+        // Instantiating a new IntentFilter to support BroadcastReceivers
+        intentFilter = new IntentFilter("mc.sweng888.psu.edu.newmapsexample.action.NEW_MAP_LOCATION_BROADCAST");
+        broadcastReceiverMap = new BroadcastReceiverMap();
+
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        // Register the Broadcast Receiver.
+        registerReceiver(broadcastReceiverMap, intentFilter);
+    }
+
+    @Override
+    protected void onStop() {
+        // Unregister the Broadcast Receiver
+        unregisterReceiver(broadcastReceiverMap);
+        super.onStop();
+
+
 
     }
 
@@ -43,12 +70,17 @@ public class MainActivity extends Activity implements OnMapReadyCallback {
     @Override
     public void onMapReady(GoogleMap googleMap) {
 
+        Intent intent = getIntent();
+        Double latiude = intent.getDoubleExtra("LATITUDE", Double.NaN);
+        Double longitude = intent.getDoubleExtra("LONGITUDE", Double.NaN);
+        String location = intent.getStringExtra("LOCATION");
+
         // Set initial positionning (Latitude / longitude)
-        currentLatLng = new LatLng(39.953348, -75.163353);
+        currentLatLng = new LatLng(latiude, longitude);
 
         googleMap.addMarker(new MarkerOptions()
                 .position(currentLatLng)
-                .title("Philadelphia")
+                .title(location)
         );
 
         // Set the camera focus on the current LatLtn object, and other map properties.
@@ -57,11 +89,12 @@ public class MainActivity extends Activity implements OnMapReadyCallback {
         useMarkerClickListener(googleMap);
     }
 
-    // Step 2 - Set a few properties for the map when it is ready to be displayed.
-    // Zoom position varies from 2 to 21.
-    // Camera position implements a builder pattern, which allows to customize the view.
-    // Bearing - screen rotation ( the angulation needs to be defined ).
-    // Tilt - screen inclination ( the angulation needs to be defined ).
+    /** Step 2 - Set a few properties for the map when it is ready to be displayed.
+       Zoom position varies from 2 to 21.
+       Camera position implements a builder pattern, which allows to customize the view.
+      Bearing - screen rotation ( the angulation needs to be defined ).
+      Tilt - screen inclination ( the angulation needs to be defined ).
+    **/
     private void mapCameraConfiguration(GoogleMap googleMap){
 
         CameraPosition cameraPosition = new CameraPosition.Builder()
@@ -86,8 +119,8 @@ public class MainActivity extends Activity implements OnMapReadyCallback {
             }});
     }
 
-    // Step 3 - Reusable code
-    // This method is called everytime the use wants to place a new marker on the map.
+    /** Step 3 - Reusable code
+     This method is called everytime the use wants to place a new marker on the map. **/
     private void createCustomMapMarkers(GoogleMap googleMap, LatLng latlng, String title, String snippet){
 
         MarkerOptions markerOptions = new MarkerOptions();
@@ -141,12 +174,10 @@ public class MainActivity extends Activity implements OnMapReadyCallback {
         });
     }
 
-
     public void createMarkersFromFirebase(GoogleMap googleMap){
         // FIXME Call loadData() to gather all MapLocation instances from firebase.
         // FIXME Call createCustomMapMarkers for each MapLocation in the Collection
     }
-
 
     private ArrayList<MapLocation> loadData(){
 

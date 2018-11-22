@@ -9,18 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <activity android:name=".activity.MapActivity">
+        </activity>
+
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-
-        <meta-data android:name="com.google.android.geo.API_KEY"
+        <receiver android:name=".broadcast.BroadcastReceiverMap">
+            <intent-filter>
+                <action android:name="mc.sweng888.psu.edu.newmapsexample.action.NEW_MAP_LOCATION_BROADCAST" />
+            </intent-filter>
+        </receiver>
+         <meta-data android:name="com.google.android.geo.API_KEY"
                 android:value="AIzaSyDK2qZykNVrsFB-R1lnMqUWf4Ag_ybpbMg"/>
-
     </application>
 
 </manifest>
