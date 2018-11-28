@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "387933793252",
+    "firebase_url": "https://uiandmaps.firebaseio.com",
+    "project_id": "uiandmaps",
+    "storage_bucket": "uiandmaps.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:387933793252:android:1de83c514150e82b",
+        "android_client_info": {
+          "package_name": "mc.sweng888.psu.edu.uiandmaps"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "387933793252-pq3uc28l0q9lt2d6ub075fn0hc1fpdbo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "mc.sweng888.psu.edu.uiandmaps",
+            "certificate_hash": "0c914deb90c2d67c999c53804f4ba29e1fad505f"
+          }
+        },
+        {
+          "client_id": "387933793252-vjv0q8tpod20d2m1bbhir50o08q897gf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDCbY1nroU1cWQAhfMA165iJ3BwvwFPB4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "387933793252-vjv0q8tpod20d2m1bbhir50o08q897gf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
