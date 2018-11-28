@@ -1,4 +1,4 @@
-package mc.sweng888.psu.edu.newmapsexample.broadcast;
+package mc.sweng888.psu.edu.mapsandbroadcast.broadcast;
 
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -7,13 +7,11 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.v4.app.NotificationCompat;
-import android.support.v4.app.NotificationManagerCompat;
 import android.util.Log;
 
-import mc.sweng888.psu.edu.newmapsexample.R;
+import mc.sweng888.psu.edu.mapsandbroadcast.R;
 
-public class BroadcastReceiverMap extends BroadcastReceiver {
+public class BroadcastReceiverMap extends BroadcastReceiver  {
 
     private static final String MAP_TAG = "MAP_TAG";
 
@@ -30,9 +28,11 @@ public class BroadcastReceiverMap extends BroadcastReceiver {
     private NotificationManager notificationManager;
     private Notification.Builder builder;
 
+    // This method is called when the BroadcastReceiver is receiving an Intent broadcast.
     @Override
     public void onReceive(Context context, Intent intent) {
 
+        // Gather the information / params from the Intent.
         Double latitude = intent.getDoubleExtra(EXTRA_LATITUDE, Double.NaN);
         Double longitude = intent.getDoubleExtra(EXTRA_LONGITUDE, Double.NaN);
         String location = intent.getStringExtra(MAP_LOCATION);
@@ -48,7 +48,6 @@ public class BroadcastReceiverMap extends BroadcastReceiver {
             // Create an instance of the NotificationManager
             // It call the static function from(Context) to get a NotificationManagerCompat object, and then call
             // one of its methods to post or cancel notifications
-
             notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
 
             // If you are using the Android API above then 26, you should use another constructor.
@@ -105,6 +104,8 @@ public class BroadcastReceiverMap extends BroadcastReceiver {
 
         return hemisphere;
     }
+
+
 }
 
 

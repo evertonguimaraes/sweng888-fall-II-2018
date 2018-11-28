@@ -1,4 +1,4 @@
-package mc.sweng888.psu.edu.newmapsexample;
+package mc.sweng888.psu.edu.mapsandbroadcast;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
