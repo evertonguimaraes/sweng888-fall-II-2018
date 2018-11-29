@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">MapsandBroadcast</string>
+    <string name="location_out">You are are accessing a space out of the earth bounds.</string>
+    <string name="button_navigate">Navigate</string>
+    <string name="text_latitude">Latitude</string>
+    <string name="text_longitude">Longitude</string>
+    <string name="text_location">Location</string>
+
+
+    <string name="btn_sign_in">Sign In</string>
+    <string name="btn_sign_up">Sign Up</string>
+    <string name="btn_sign_in_google">Google Sign In</string>
+
+
+    <string name="edit_text_user">Email or ID</string>
+    <string name="edit_text_pass">Password</string>
+    <string name="btn_login">Login</string>
+    <string name="text_view_or">OR</string>
+    <string name="btn_create_user">Sign Up</string>
+
+    <string name="act_maps_location_list">List of Locations</string>
+    <string name="act_google_maps"> Google Maps</string>
+    <string name="act_location_details"> Location Details</string>
+    <string name="act_login">Login / SignUp</string>
+
+    <string name="auth_failed">Authentication:success</string>
+    <string name="sign_in_success">signInWithEmail:success</string>
+    <string name="sign_up_success">createUserWithEmailAndPassword:failure</string>
+    <string name="sign_in_fail">signInWithEmail:failure</string>
+    <string name="sign_up_fail">createUserWithEmailAndPassword:failure</string>
+
+    <string name="txt_view_city">City: </string>
+    <string name="txt_view_address">Address: </string>
+    <string name="text_view_zip"> ZIP: </string>
+    <string name="text_view_latlng"> Coordinates: </string>
+    <string name="txt_view_user"> Welcome </string>
+
+    <string name="nav_item_logout"> Log Out </string>
+    <string name="nav_item_locations"> Locations List</string>
+    <string name="nav_item_locations_tab">Locations with Tabs</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Welcome</string>
+    <string name="nav_header_subtitle">ezt157@psu.edu</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="item_locations_list">Locations List</string>
+    <string name="item_contact">Contact</string>
+</resources>
