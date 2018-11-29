@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="mc.sweng888.psu.edu.mapsandbroadcast">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".activity.LoginActivity"
+            android:label="@string/act_login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.MapLocationListActivity"
+            android:label="@string/act_maps_location_list" />
+        <activity
+            android:name=".activity.MapActivity"
+            android:label="@string/act_google_maps"></activity>
+
+        <receiver android:name=".broadcast.BroadcastReceiverMap">
+            <intent-filter>
+                <action android:name="mc.sweng888.psu.edu.newmapsexample.action.NEW_MAP_LOCATION_BROADCAST" />
+            </intent-filter>
+        </receiver>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDK2qZykNVrsFB-R1lnMqUWf4Ag_ybpbMg" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity
+            android:name=".activity.NavigationActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme">
+
+        </activity>
+    </application>
+
+</manifest>

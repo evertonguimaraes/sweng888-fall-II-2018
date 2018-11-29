@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_item_locations"
+            android:icon="@mipmap/ic_launcher"
+            android:title="@string/nav_item_locations" />
+
+        <item
+            android:id="@+id/nav_item_locations_tab"
+            android:icon="@mipmap/ic_launcher"
+            android:title="@string/nav_item_locations_tab" />
+
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_item_log_out"
+            android:icon="@mipmap/ic_launcher"
+            android:title="@string/nav_item_logout" />
+    </group>
+</menu>
