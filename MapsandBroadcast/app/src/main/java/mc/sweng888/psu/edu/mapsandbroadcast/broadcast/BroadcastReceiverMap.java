@@ -10,15 +10,14 @@ import android.graphics.Color;
 import android.util.Log;
 
 import mc.sweng888.psu.edu.mapsandbroadcast.R;
+import mc.sweng888.psu.edu.mapsandbroadcast.activity.MainActivity;
+import mc.sweng888.psu.edu.mapsandbroadcast.model.MapLocation;
 
 public class BroadcastReceiverMap extends BroadcastReceiver  {
 
     private static final String MAP_TAG = "MAP_TAG";
 
-    public static final String NEW_MAP_LOCATION_BROADCAST = "mc.sweng888.psu.edu.newmapsexample.action.NEW_MAP_LOCATION_BROADCAST";
-    public static final String EXTRA_LATITUDE = "LATITUDE";
-    public static final String EXTRA_LONGITUDE = "LONGITUDE";
-    public static final String MAP_LOCATION = "LOCATION";
+    public static final String MAP_BROADCAST = "mc.sweng888.psu.edu.mapsandbroadcast.action.MAP_BROADCAST";
 
     public static final int CHANNEL_ID = 1;
     public static final int CHANNEL_IMPORTANCE = NotificationManager.IMPORTANCE_HIGH;
@@ -32,15 +31,15 @@ public class BroadcastReceiverMap extends BroadcastReceiver  {
     @Override
     public void onReceive(Context context, Intent intent) {
 
+        Log.d("BROADCAST", "onReceive");
+
         // Gather the information / params from the Intent.
-        Double latitude = intent.getDoubleExtra(EXTRA_LATITUDE, Double.NaN);
-        Double longitude = intent.getDoubleExtra(EXTRA_LONGITUDE, Double.NaN);
-        String location = intent.getStringExtra(MAP_LOCATION);
+        MapLocation mapLocation =  (MapLocation) intent.getSerializableExtra(MainActivity.LOCATION_PARAMS);
 
         // It assumes the highest and lowest latitude on Earth as being, respectively, 90 and -90.
         // Any points between -23 and 23 is considered as CENTRAL HEMISPHERE, as it is close
         // to the Equator.
-        String hemisphere = getHemisphere(latitude);
+        String hemisphere = getHemisphere(mapLocation.getLatitude());
 
 
         if (hemisphere.equals("NORTH") || hemisphere.equals("SOUTH") || hemisphere.equals("SOUTH")){
@@ -55,12 +54,13 @@ public class BroadcastReceiverMap extends BroadcastReceiver  {
 
             // Set up the notification Title and Text.
             builder.setSmallIcon(R.drawable.broadcast);
-            builder.setContentTitle(location);
-            builder.setContentText(Double.isNaN(latitude) || Double.isNaN(longitude)
-                    ? "Lcation Unknown" :
+            builder.setContentTitle(mapLocation.getCity());
+            builder.setContentText(Double.isNaN(mapLocation.getLatitude())
+                                    || Double.isNaN(mapLocation.getLongitude())
+                    ? "Location Unknown" :
                     "Located at the " + hemisphere +
                             ", with coordinates (lat, lng): "+
-                            latitude+", "+longitude);
+                            mapLocation.getLatitude()+", "+mapLocation.getLongitude());
 
             // Set the notification channel
             notificationManager.createNotificationChannel(getNotificationChannel());
