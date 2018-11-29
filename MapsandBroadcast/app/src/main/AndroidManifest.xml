@@ -10,19 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".activity.LoginActivity" android:label="@string/act_login">
+        <activity android:name=".activity.MainActivity" android:label="@string/act_login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
 
-        <activity android:name=".activity.MapLocationListActivity" android:label="@string/act_maps_location_list"> </activity>
         <activity android:name=".activity.MapActivity" android:label="@string/act_google_maps" > </activity>
 
         <receiver android:name=".broadcast.BroadcastReceiverMap">
             <intent-filter>
-                <action android:name="mc.sweng888.psu.edu.newmapsexample.action.NEW_MAP_LOCATION_BROADCAST" />
+                <action android:name="mc.sweng888.psu.edu.mapsandbroadcast.action.MAP_BROADCAST" />
             </intent-filter>
         </receiver>
 

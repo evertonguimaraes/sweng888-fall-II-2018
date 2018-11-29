@@ -59,7 +59,7 @@ public class MapActivity extends Activity implements OnMapReadyCallback{
         mapFragment.getMapAsync(this);
 
         // Instantiating a new IntentFilter to support BroadcastReceivers
-        intentFilter = new IntentFilter("mc.sweng888.psu.edu.newmapsexample.action.NEW_MAP_LOCATION_BROADCAST");
+        intentFilter = new IntentFilter("mc.sweng888.psu.edu.newmapsexample.action.MAP_BROADCAST");
         broadcastReceiverMap = new BroadcastReceiverMap();
     }
 
@@ -72,8 +72,8 @@ public class MapActivity extends Activity implements OnMapReadyCallback{
         mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
 
         Intent intent = getIntent();
-        MapLocation mapLocation =  (MapLocation) intent.getSerializableExtra(MapLocationListActivity.TAG_SELECTED_ITEM);
-
+        //MapLocation mapLocation =  (MapLocation) intent.getSerializableExtra(MapLocationListActivity.TAG_SELECTED_ITEM);
+        MapLocation mapLocation = (MapLocation) intent.getSerializableExtra(MainActivity.LOCATION_PARAMS);
         // Set the camera focus on the current LatLtn object, and other map properties.
         mapCameraConfiguration(mapLocation.getLatLng());
         useMapClickListener();

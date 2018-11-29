@@ -34,4 +34,6 @@
     <string name="text_view_zip"> ZIP: </string>
     <string name="text_view_latlng"> Coordinates: </string>
 
+    <string name="button_send_intent">Send Broadcast</string>
+
 </resources>
